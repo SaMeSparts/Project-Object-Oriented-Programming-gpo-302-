@@ -1,6 +1,5 @@
-# Project-Object-Oriented-Programming-gpo-302-
+# TransporTEC
 
-Diego Antonio González Cortés A01713489
 
 The problem came from seeing how transportation companies often don’t manage their vehicles very well. Many still use spreadsheets or old software to keep track of cars, drivers, and routes. Doing things by hand like this causes mistakes, missed vehicle check-ups, and wastes time and resources.
 
