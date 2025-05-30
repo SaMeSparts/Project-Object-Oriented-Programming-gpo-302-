@@ -14,4 +14,6 @@ FleetManager: connects all parts and lets users add vehicles and drivers, assign
 
 The goal is to organize the transport system and avoid human mistakes.
 
+
+UML Diagram:
 ![TransporTEC](https://github.com/user-attachments/assets/4eba6795-fb38-4cbd-8673-0ba73b10d3f8)
