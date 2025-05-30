@@ -1,22 +1,24 @@
 # TransporTEC
 
-Many transport companies, especially small and medium ones, still use old ways like Excel sheets or old software to keep track of their vehicles, drivers, and routes. These ways are often slow and can cause mistakes because people have to enter data by hand. For example, it’s easy to forget when a vehicle needs fixing or to mix up which driver drives which vehicle. Sometimes important information gets lost or written wrong, which can cause confusion.
+Many transport companies, especially small and medium ones, still use old ways like Excel or old software to manage their vehicles and drivers. These ways are slow and can cause mistakes because people have to enter information by hand. For example, it’s easy to forget when a vehicle needs maintenance or mix up which driver is assigned to which vehicle. Sometimes important information is lost or written wrong, causing confusion.
 
-These problems can cause bigger troubles for the company. If vehicles are not fixed on time, they might break down or cause accidents. If drivers are assigned the wrong vehicles, deliveries or trips can be slow, wasting time and money. Overall, these mistakes make the company work worse and can make transport unsafe for workers and customers.
+These problems can cause bigger troubles. If vehicles don’t get maintenance on time, they might break down or cause accidents. If drivers are assigned to the wrong vehicles, deliveries and trips can be delayed, wasting time and money. Overall, these mistakes hurt how well the company works and can make transport unsafe for workers and customers.
 
-To help fix these problems, this project is a simple C++ program that uses object-oriented programming (OOP). OOP means the program has parts called classes that represent real things like cars, drivers, and routes. Each class holds related information and actions.
+To help with this, this project is a simple C++ program using object-oriented programming. It has classes for vehicles, drivers, and maintenance. Each class holds the right information and helps organize it.
 
 The program has these parts:
 
-Vehicle: stores details like license plate, type, and maintenance info.
+Vehicle: stores details like brand, model, year, and maintenance info.
 
-Driver: stores the driver’s name, license number, and the vehicle they drive.
+Driver: stores the driver’s name and the vehicle they drive.
 
-Route: holds where the trip starts, where it ends, distance, and travel time.
+Maintenance: keeps track of the last maintenance date and status of a vehicle.
 
-FleetManager: connects all parts and lets users add vehicles and drivers, assign drivers to vehicles, create routes, and check maintenance.
+Car and Truck: special types of vehicles with extra details like number of seats or load capacity.
 
-The goal is to organize the transport system better and avoid mistakes caused by people.
+FleetManager (conceptual): connects all parts and helps manage the vehicles and drivers, assign drivers to vehicles, and check maintenance.
+
+The program lets you see details about cars and trucks and who drives them, making it easier to avoid mistakes and keep the transport running smoothly.
 
 
 UML Diagram:
