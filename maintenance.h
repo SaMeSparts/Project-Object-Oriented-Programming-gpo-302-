@@ -9,8 +9,8 @@ private:
     string status;
 
 public:
-    Maintenance(string date, string stat);
-    void showStatus() const;
+    Maintenance(string date, string s);
+    string getStatus() const;
 };
 
 #endif

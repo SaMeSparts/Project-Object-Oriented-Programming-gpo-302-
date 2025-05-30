@@ -13,7 +13,7 @@ private:
 
 public:
     Driver(string n, Vehicle* v);
-    void showDriver() const;
+    string showDriver() const;
 };
 
 #endif

@@ -8,11 +8,10 @@ using namespace std;
 
 class Truck : public Vehicle {
 private:
-    double loadCapacity;
+    double capacity;
 
 public:
-    Truck(string b, string m, int y, double cap, string lastDate, string status);
-    void showInfo() const override;
+    Truck(string b, string m, int y, double c, string lastDate, string status);
+    string getInfo() const override;
 };
-
 #endif

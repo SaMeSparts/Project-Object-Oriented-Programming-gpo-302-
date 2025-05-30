@@ -3,10 +3,9 @@
 #include <string>
 using namespace std;
 
-Car::Car(string b, string m, int y, int p, string lastDate, string status)
-    : Vehicle(b, m, y, lastDate, status), passengers(p) {}
+Car::Car(string b, string m, int y, int s, string lastDate, string status)
+    : Vehicle(b, m, y, lastDate, status), seats(s) {}
 
-void Car::showInfo() const {
-    Vehicle::showInfo();
-    cout << "Passenger capacity: " << passengers << endl;
+string Car::getInfo() const {
+    return Vehicle::getInfo() + "\nSeats: " + to_string(seats);
 }

@@ -6,75 +6,45 @@
 using namespace std;
 
 int main() {
-    // Vehículos predefinidos
     Car car1("Toyota", "Corolla", 2020, 5, "2025-01-15", "Good");
     Car car2("Honda", "Civic", 2021, 4, "2025-03-10", "Excellent");
-
     Truck truck1("Volvo", "FH", 2018, 18.5, "2025-02-01", "Needs inspection");
     Truck truck2("Scania", "R500", 2019, 20.0, "2025-01-25", "Good");
+
+    Driver driver1("Alice", &car1);
+    Driver driver2("Bob", &truck1);
 
     int option = -1;
 
     while (option != 0) {
-        cout << "\n========== VEHICLE MENU ==========" << endl;
-        cout << "1. View all Cars" << endl;
-        cout << "2. View all Trucks" << endl;
-        cout << "3. Register a Vehicle (no code)" << endl;
-        cout << "4. Register a Vehicle (with code)" << endl;
-        cout << "0. Exit" << endl;
+        cout << "\n========== VEHICLE MENU ==========\n";
+        cout << "1. View all Cars\n";
+        cout << "2. View all Trucks\n";
+        cout << "3. Register a Vehicle (no code)\n";
+        cout << "4. Register a Vehicle (with code)\n";
+        cout << "5. View Drivers\n";
+        cout << "0. Exit\n";
         cout << "Choose an option: ";
         cin >> option;
 
         if (option == 1) {
             cout << "\n--- Cars ---\n";
-            car1.showInfo();
-            cout << "------------------------\n";
-            car2.showInfo();
-        }
-        else if (option == 2) {
+            cout << car1.getInfo() << endl << "------------------------\n";
+            cout << car2.getInfo() << endl;
+        } else if (option == 2) {
             cout << "\n--- Trucks ---\n";
-            truck1.showInfo();
-            cout << "------------------------\n";
-            truck2.showInfo();
-        }
-        else if (option == 3) {
-            int type;
-            cout << "Register Vehicle (no code)\n";
-            cout << "1. Car\n2. Truck\nType: ";
-            cin >> type;
-
-            if (type == 1) {
-                car1.registerVehicle();
-            }
-            else if (type == 2) {
-                truck1.registerVehicle();
-            }
-            else {
-                cout << "Invalid vehicle type.\n";
-            }
-        }
-        else if (option == 4) {
-            int type, code;
-            cout << "Register Vehicle (with code)\n";
-            cout << "1. Car\n2. Truck\nType: ";
-            cin >> type;
-            cout << "Enter code: ";
-            cin >> code;
-
-            if (type == 1) {
-                car1.registerVehicle(code);
-            }
-            else if (type == 2) {
-                truck1.registerVehicle(code);
-            }
-            else {
-                cout << "Invalid vehicle type.\n";
-            }
-        }
-        else if (option == 0) {
+            cout << truck1.getInfo() << endl << "------------------------\n";
+            cout << truck2.getInfo() << endl;
+        } else if (option == 3) {
+            cout << car1.registerVehicle() << endl;
+        } else if (option == 4) {
+            cout << car2.registerVehicle(123) << endl;
+        } else if (option == 5) {
+            cout << driver1.showDriver() << endl << "------------------------\n";
+            cout << driver2.showDriver() << endl;
+        } else if (option == 0) {
             cout << "Exiting program. Goodbye!\n";
-        }
-        else {
+        } else {
             cout << "Invalid option. Try again.\n";
         }
     }

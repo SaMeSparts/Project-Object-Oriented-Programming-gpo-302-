@@ -4,7 +4,7 @@
 using namespace std;
 #include <iostream>
 
-Vehicle::Vehicle(string b, string m, int y, string lastDate, string status) 
+Vehicle::Vehicle(string b, string m, int y, string lastDate, string status)
     : brand(b), model(m), year(y) {
     maintenance = new Maintenance(lastDate, status);
 }
@@ -13,15 +13,15 @@ Vehicle::~Vehicle() {
     delete maintenance;
 }
 
-void Vehicle::showInfo() const {
-    cout << "Vehicle: " << brand << " " << model << " (" << year << ")" << endl;
-    maintenance->showStatus();
+string Vehicle::getInfo() const {
+    return "Brand: " + brand + "\nModel: " + model + "\nYear: " + to_string(year) +
+           "\n" + maintenance->getStatus();
 }
 
-void Vehicle::registerVehicle() {
-    cout << "Vehicle registered (basic)." << endl;
+string Vehicle::registerVehicle() const {
+    return "Vehicle registered (basic).";
 }
 
-void Vehicle::registerVehicle(int code) {
-    cout << "Vehicle registered with code: " << code << endl;
+string Vehicle::registerVehicle(int code) const {
+    return "Vehicle registered with code: " + to_string(code);
 }

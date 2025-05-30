@@ -8,11 +8,11 @@ using namespace std;
 
 class Car : public Vehicle {
 private:
-    int passengers;
+    int seats;
 
 public:
-    Car(string b, string m, int y, int p, string lastDate, string status);
-    void showInfo() const override;
+    Car(string b, string m, int y, int s, string lastDate, string status);
+    string getInfo() const override;
 };
 
 #endif

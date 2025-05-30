@@ -9,18 +9,17 @@ using namespace std;
 
 class Vehicle {
 protected:
-    std::string brand;
-    std::string model;
+    string brand;
+    string model;
     int year;
     Maintenance* maintenance;
 
 public:
-    Vehicle(string b, string m, int y,string lastDate,string status);
+    Vehicle(string b, string m, int y, string lastDate, string status);
     virtual ~Vehicle();
-    
-    virtual void showInfo() const;
-    void registerVehicle();
-    void registerVehicle(int code);
+    virtual string getInfo() const;
+    virtual string registerVehicle() const;
+    virtual string registerVehicle(int code) const;
 };
 
 #endif
