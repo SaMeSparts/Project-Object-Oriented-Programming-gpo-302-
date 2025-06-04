@@ -1,52 +1,59 @@
 #include <iostream>
+#include <vector>
 #include "car.h"
 #include "truck.h"
 #include "driver.h"
-
 using namespace std;
 
+// Main Function
 int main() {
-    Car car1("Toyota", "Corolla", 2020, 5, "2025-01-15", "Good");
-    Car car2("Honda", "Civic", 2021, 4, "2025-03-10", "Excellent");
-    Truck truck1("Volvo", "FH", 2018, 18.5, "2025-02-01", "Needs inspection");
-    Truck truck2("Scania", "R500", 2019, 20.0, "2025-01-25", "Good");
+    // Create Vehicles
+    Vehicle* car1 = new Car("Toyota", "Corolla", 2020, 5, "2024-10-15", "OK");
+    Vehicle* truck1 = new Truck("Volvo", "FH", 2018, 18.0, "2024-08-10", "Requires service");
 
-    Driver driver1("Alice", &car1);
-    Driver driver2("Bob", &truck1);
+    // Test Setters
+    car1->setBrand("Nissan"); 
+    truck1->setYear(2019);     
 
-    int option = -1;
+    //  Vector of vehicle pointers 
+    vector<Vehicle*> fleet;
+    fleet.push_back(car1);
+    fleet.push_back(truck1);
 
-    while (option != 0) {
-        cout << "\n========== VEHICLE MENU ==========\n";
-        cout << "1. View all Cars\n";
-        cout << "2. View all Trucks\n";
-        cout << "3. Register a Vehicle (no code)\n";
-        cout << "4. Register a Vehicle (with code)\n";
-        cout << "5. View Drivers\n";
-        cout << "0. Exit\n";
-        cout << "Choose an option: ";
-        cin >> option;
+    // ===== POLYMORPHIC BEHAVIOR =====
+    cout << "=== Fleet Info ===" << endl;
+    for (Vehicle* v : fleet) {
+        cout << v->getInfo() << endl;
+        cout << v->registerVehicle() << endl;
+        cout << v->registerVehicle(123) << endl;  // Overloading
+        cout << "-----------------------" << endl;
+    }
 
-        if (option == 1) {
-            cout << "\n--- Cars ---\n";
-            cout << car1.getInfo() << endl << "------------------------\n";
-            cout << car2.getInfo() << endl;
-        } else if (option == 2) {
-            cout << "\n--- Trucks ---\n";
-            cout << truck1.getInfo() << endl << "------------------------\n";
-            cout << truck2.getInfo() << endl;
-        } else if (option == 3) {
-            cout << car1.registerVehicle() << endl;
-        } else if (option == 4) {
-            cout << car2.registerVehicle(123) << endl;
-        } else if (option == 5) {
-            cout << driver1.showDriver() << endl << "------------------------\n";
-            cout << driver2.showDriver() << endl;
-        } else if (option == 0) {
-            cout << "Exiting program. Goodbye!\n";
-        } else {
-            cout << "Invalid option. Try again.\n";
-        }
+    // ===== USE OF SETTERS TO UPDATE VEHICLE =====
+    car1->setMaintenance("2025-05-30", "Excellent");
+    truck1->setMaintenance("2025-04-20", "Serviced");
+    
+    // ===== CREATE DRIVER AND ASSIGN VEHICLES =====
+    Driver d1("Luis Ramirez");
+    d1.assignVehicle(car1);
+    d1.assignVehicle(truck1);
+
+    // ===== SHOW DRIVER INFO =====
+    cout << "\n=== Driver Info ===" << endl;
+    cout << d1.showDriver() << endl;
+
+    // ===== USE SEARCH METHOD (matches, ENCAPSULATION) =====
+    string brandSearch = "Toyota";
+    string modelSearch = "Corolla";
+    if (d1.hasVehicle(brandSearch, modelSearch)) {
+        cout << "Driver has the vehicle: " << brandSearch << " " << modelSearch << endl;
+    } else {
+        cout << "Driver does NOT have the vehicle: " << brandSearch << " " << modelSearch << endl;
+    }
+
+    // ===== CLEAN UP MEMORY =====
+    for (Vehicle* v : fleet) {
+        delete v;
     }
 
     return 0;

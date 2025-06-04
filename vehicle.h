@@ -28,6 +28,9 @@ public:
     // Overloaded method
     virtual string registerVehicle() const;
     virtual string registerVehicle(int code) const;
+    
+    // Helper method
+    bool matches(const string& b, const string& m) const;
 
     // Setters
     void setBrand(const string& b);

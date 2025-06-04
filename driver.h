@@ -1,18 +1,33 @@
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 #ifndef DRIVER_H
 #define DRIVER_H
 
 #include "Vehicle.h"
 
+// Driver Class
 class Driver {
 private:
+    // Private Truck Attributes
     string name;
-    Vehicle* assignedVehicle;
+    vector<Vehicle*> assignedVehicles;
 
 public:
-    Driver(string n, Vehicle* v);
+    // Constructor
+    Driver(string n);
+    
+     // Setter
+    void setName(const string& n);
+
+    // Assign vehicle to driver
+    void assignVehicle(Vehicle* v);
+
+    // Search if driver has a vehicle by brand and model
+    bool hasVehicle(const string& brand, const string& model) const;
+
+    // Show driver info and all assigned vehicles info
     string showDriver() const;
 };
 

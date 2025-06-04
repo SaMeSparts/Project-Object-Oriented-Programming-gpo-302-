@@ -15,20 +15,20 @@ Vehicle::~Vehicle() {
     delete maintenance;
 }
 
-// Base getInfo, used by child classes
-string Vehicle::getInfo() const {
-    return "Brand: " + brand + "\nModel: " + model + "\nYear: " + to_string(year) +
-           "\n" + maintenance->getStatus();
-}
 
 // Basic registerVehicle implementation
 string Vehicle::registerVehicle() const {
     return "Vehicle registered (basic).";
 }
 
-// Overloaded registerVehicle with code
+// Overloaded registerVehicle with code 
 string Vehicle::registerVehicle(int code) const {
     return "Vehicle registered with code: " + to_string(code);
+}
+
+// Match metod
+bool Vehicle::matches(const string& b, const string& m) const {
+    return (brand == b && model == m);
 }
 
 // Setters

@@ -14,9 +14,15 @@ private:
 public:
     // Construtor
     Car(string b, string m, int y, int s, string lastDate, string status);
+
+    // Override getInfo
     string getInfo() const override;
 
-    void setSeats();
+    // Override registerVehicle
+    string registerVehicle() const override;
+
+    // Setter
+    void setSeats(int s);
 };
 
 #endif
