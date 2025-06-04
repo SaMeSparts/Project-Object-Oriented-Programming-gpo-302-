@@ -9,7 +9,8 @@ Truck::Truck(string b, string m, int y, double c, string lastDate, string status
 
 // GetInfo override adds capacity info
 string Truck::getInfo() const {
-    return Vehicle::getInfo() + "\nCapacity: " + to_string(capacity) + " tons";
+    return "Brand: " + brand + "\nModel: " + model + "\nYear: " + to_string(year) + 
+           "\n" + maintenance->getStatus() + "\nCapacity: " + to_string(capacity) + " tons";
 }
 
 // Override registerVehicle method

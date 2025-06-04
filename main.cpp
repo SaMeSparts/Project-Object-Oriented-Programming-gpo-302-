@@ -20,7 +20,7 @@ int main() {
     fleet.push_back(car1);
     fleet.push_back(truck1);
 
-    // ===== POLYMORPHIC BEHAVIOR =====
+    // Polymorphism
     cout << "=== Fleet Info ===" << endl;
     for (Vehicle* v : fleet) {
         cout << v->getInfo() << endl;
@@ -29,20 +29,20 @@ int main() {
         cout << "-----------------------" << endl;
     }
 
-    // ===== USE OF SETTERS TO UPDATE VEHICLE =====
+    // Use of setters to change vehicle
     car1->setMaintenance("2025-05-30", "Excellent");
     truck1->setMaintenance("2025-04-20", "Serviced");
     
-    // ===== CREATE DRIVER AND ASSIGN VEHICLES =====
+    // Create driver and assign vehicles
     Driver d1("Luis Ramirez");
     d1.assignVehicle(car1);
     d1.assignVehicle(truck1);
 
-    // ===== SHOW DRIVER INFO =====
+    // Show driver info
     cout << "\n=== Driver Info ===" << endl;
     cout << d1.showDriver() << endl;
 
-    // ===== USE SEARCH METHOD (matches, ENCAPSULATION) =====
+    // Search method
     string brandSearch = "Toyota";
     string modelSearch = "Corolla";
     if (d1.hasVehicle(brandSearch, modelSearch)) {
@@ -51,7 +51,7 @@ int main() {
         cout << "Driver does NOT have the vehicle: " << brandSearch << " " << modelSearch << endl;
     }
 
-    // ===== CLEAN UP MEMORY =====
+    // CLEAN UP MEMORY
     for (Vehicle* v : fleet) {
         delete v;
     }

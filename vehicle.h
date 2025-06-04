@@ -24,7 +24,7 @@ public:
 
     // // Abstract class, pure virtual
     virtual string getInfo() const = 0;
-
+    
     // Overloaded method
     virtual string registerVehicle() const;
     virtual string registerVehicle(int code) const;
