@@ -32,6 +32,10 @@ public:
     // Helper method
     bool matches(const string& b, const string& m) const;
 
+    // Operator overloading
+    bool operator==(const Vehicle& other) const;
+    friend ostream& operator<<(ostream& os, const Vehicle& v);
+
     // Setters
     void setBrand(const string& b);
     void setModel(const string& m);

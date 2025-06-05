@@ -20,12 +20,12 @@ int main() {
     fleet.push_back(car1);
     fleet.push_back(truck1);
 
-    // Polymorphism
+    // Polymorphism and overloading
     cout << "=== Fleet Info ===" << endl;
     for (Vehicle* v : fleet) {
         cout << v->getInfo() << endl;
         cout << v->registerVehicle() << endl;
-        cout << v->registerVehicle(123) << endl;  // Overloading
+        cout << v->registerVehicle(123) << endl;  
         cout << "-----------------------" << endl;
     }
 
@@ -42,13 +42,22 @@ int main() {
     cout << "\n=== Driver Info ===" << endl;
     cout << d1.showDriver() << endl;
 
-    // Search method
+    // Search Vehicle
     string brandSearch = "Toyota";
     string modelSearch = "Corolla";
     if (d1.hasVehicle(brandSearch, modelSearch)) {
         cout << "Driver has the vehicle: " << brandSearch << " " << modelSearch << endl;
     } else {
         cout << "Driver does NOT have the vehicle: " << brandSearch << " " << modelSearch << endl;
+    }
+
+        // Operator Overloading
+    cout << "\nComparison of cars" << endl;
+    Car tempCar("Nissan", "Corolla", 2020, 5, "2024-10-15", "OK");
+    if (*car1 == tempCar) {
+        cout << "car 1 is equal to tempCar (same brand, model, and year)." << endl;
+    } else {
+        cout << "car 1 is not equal to tempCar." << endl;
     }
 
     // CLEAN UP MEMORY

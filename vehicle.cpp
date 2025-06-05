@@ -48,3 +48,14 @@ void Vehicle::setMaintenance(const string& lastDate, const string& status) {
     maintenance->setLastDate(lastDate);
     maintenance->setStatus(status);
 }
+
+// Operator ==
+bool Vehicle::operator==(const Vehicle& other) const {
+    return brand == other.brand && model == other.model && year == other.year;
+}
+
+// Operator <<
+ostream& operator<<(ostream& os, const Vehicle& v) {
+    os << v.getInfo();
+    return os;
+}
