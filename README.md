@@ -22,4 +22,5 @@ The program lets you see details about cars and trucks and who drives them, maki
 
 
 UML Diagram:
-![TransporTEC](https://github.com/user-attachments/assets/4eba6795-fb38-4cbd-8673-0ba73b10d3f8)
+![TransporTEC (1)](https://github.com/user-attachments/assets/d9d09887-dbaf-40a5-b477-4e34be069e8a)
+
